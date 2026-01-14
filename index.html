@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business IT Final Exam - Complete Flashcard Deck (69 Cards)</title>
+    
+    <style>
+/* ===== BASE STYLING ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #e0e0e0;
+    }
+    
+    .header {
+        background: rgba(0, 0, 0, 0.3);
+        border-bottom-color: #4a5568;
+    }
+    
+    .nav-link {
+        color: #cbd5e0;
+        border-bottom-color: rgba(102, 126, 234, 0.3);
+    }
+    
+    .nav-link:hover {
+        color: #fff;
+        border-bottom-color: #667eea;
+    }
+    
+    .card {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: #4a5568;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+    
+    .question {
+        color: #e0e0e0;
+        border-bottom-color: #4a5568;
+    }
+    
+    .answer-text {
+        color: #cbd5e0;
+    }
+    
+    .category-header {
+        background: rgba(102, 126, 234, 0.2);
+        border-left-color: #667eea;
+    }
+    
+    .key-point {
+        background: rgba(102, 126, 234, 0.2);
+        border-left-color: #667eea;
+    }
+    
+    code {
+        background: rgba(255, 255, 255, 0.1);
+        color: #f687b3;
+    }
+    
+    .comparison-item {
+        background: rgba(102, 126, 234, 0.1);
+        border-color: rgba(102, 126, 234, 0.3);
+    }
+    
+    .comparison-item h4 {
+        color: #9f7aea;
+    }
+    
+    .technical-term {
+        color: #9f7aea;
+    }
+    
+    .key-point strong {
+        color: #9f7aea;
+    }
+    
+    .back-to-top {
+        background: #667eea;
+    }
+    
+    .stats-box {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: #4a5568;
+    }
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #718096;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.stat-icon {
+    font-size: 20px;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #2d3748;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: #667eea;
+    border-bottom-color: #667eea;
+    transform: translateY(-2px);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ===== STATS BOX ===== */
+.stats-box {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e2e8f0;
+}
+
+.stats-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, transparent 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #718096;
+    margin-top: 5px;
+}
+
+/* ===== CATEGORY SECTION ===== */
+.category-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px;
+}
+
+.category-header {
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.15) 0%, transparent 100%);
+    border-left: 6px solid #667eea;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    border-radius: 0 12px 12px 0;
+}
+
+.category-header h2 {
+    font-size: 28px;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.category-count {
+    font-size: 14px;
+    color: #718096;
+    font-weight: 600;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.card-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.difficulty-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.difficulty-high {
+    background: linear-gradient(135deg, #fc5c7d 0%, #e53e3e 100%);
+}
+
+.difficulty-medium {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.difficulty-low {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.likelihood-badge {
+    display: inline-block;
+    background: rgba(72, 187, 120, 0.2);
+    color: #2f855a;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.points-badge {
+    display: inline-block;
+    background: rgba(102, 126, 234, 0.2);
+    color: #5a67d8;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.question {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    line-height: 1.5;
+}
+
+.answer {
+    margin-top: 20px;
+}
+
+.answer-text {
+    font-size: 18px;
+    color: #1a202c;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ===== KEY POINTS ===== */
+.key-point {
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.1) 0%, transparent 100%);
+    border-left: 4px solid #667eea;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+}
+
+.key-point strong {
+    color: #5a67d8;
+    font-weight: 700;
+}
+
+/* ===== COMPARISON ===== */
+.comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.comparison-item {
+    background: rgba(102, 126, 234, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.comparison-item h4 {
+    color: #5a67d8;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* ===== LISTS ===== */
+ul, ol {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+li::marker {
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ===== CODE AND TECHNICAL TERMS ===== */
+code {
+    background: #f7fafc;
+    color: #d53f8c;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.technical-term {
+    color: #5a67d8;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #667eea;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    .stats {
+        gap: 15px;
+    }
+    
+    .comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .question {
+        font-size: 20px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎓 Business IT Final Exam - Complete Study Deck</h1>
+        <p>69 Professionally Formatted Flashcards</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-icon">📚</span>
+                <span>69 Total Cards</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">📂</span>
+                <span>11 Categories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">💯</span>
+                <span>450-580 Points Coverage</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">🎯</span>
+                <span>4.5-5.8x Exam Coverage</span>
+            </div>
+        </div>
+        
+        <div class="nav">
+            <a href="#business-intelligence" class="nav-link">📊 Business Intelligence</a>
+            <a href="#cloud-computing" class="nav-link">☁️ Cloud Computing</a>
+            <a href="#databases" class="nav-link">💾 Databases</a>
+            <a href="#enterprise-systems" class="nav-link">🏢 Enterprise Systems</a>
+            <a href="#ethics-and-legal" class="nav-link">⚖️ Ethics & Legal</a>
+            <a href="#hardware-and-software" class="nav-link">🖥️ Hardware & Software</a>
+            <a href="#networking" class="nav-link">🌐 Networking</a>
+            <a href="#process-management" class="nav-link">📋 Process Management</a>
+            <a href="#project-management" class="nav-link">🎯 Project Management</a>
+            <a href="#security" class="nav-link">🔒 Security</a>
+            <a href="#strategy" class="nav-link">💼 Strategy</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="stats-box">
+            <h2>📊 Deck Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">34</div>
+                    <div class="stat-label">🔴 High Priority</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">35</div>
+                    <div class="stat-label">🟠 Medium Priority</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">🔵 Low Priority</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">📂 Categories</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="business-intelligence">
+            <div class="category-header">
+                <h2>📊 Business Intelligence</h2>
+                <div class="category-count">4 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 85% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain the difference between OLTP and OLAP systems.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>OLTP<br>(Transaction Processing)</h4><strong>Purpose:</strong> Day-to-day operations<br><strong>Data:</strong> Current, normalized<br><strong>Users:</strong> Many concurrent users<br><strong>Queries:</strong> Fast, simple<br><strong>Example:</strong> Order processing, banking</div><div class="comparison-item"><h4>OLAP<br>(Analytical Processing)</h4><strong>Purpose:</strong> Strategic analysis<br><strong>Data:</strong> Historical, denormalized<br><strong>Users:</strong> Fewer analysts<br><strong>Queries:</strong> Complex, aggregated<br><strong>Example:</strong> Sales trend analysis</div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 75% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is a data warehouse? How does it differ from operational databases?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">A <span class="technical-term">data warehouse</span> is a centralized repository storing integrated historical data from multiple sources, designed for analytical queries and BI rather than operational transactions.</div><div class="key-point"><strong>Four Key Characteristics:</strong><ul><li><strong>Subject-oriented:</strong> Organized by business topics</li><li><strong>Integrated:</strong> Consolidated from multiple sources</li><li><strong>Time-variant:</strong> Includes historical snapshots</li><li><strong>Non-volatile:</strong> Data added, not updated/deleted</li></ul></div><div class="key-point">Populated through <strong>ETL</strong> (Extract, Transform, Load) processes</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 60% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is Business Intelligence? Describe BI tools and applications.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>Business Intelligence:</strong> Technologies and strategies for analyzing business data to support decision-making.</div><div class="key-point"><strong>BI Tools:</strong><ul><li><strong>Reporting Tools:</strong> Generate regular business reports</li><li><strong>Dashboards:</strong> Visualize key metrics in real-time</li><li><strong>Data Mining:</strong> Discover patterns, predictive analytics</li></ul></div><div class="answer-text">Transform raw data from operational systems and data warehouses into actionable insights for strategic planning, performance monitoring, and identifying opportunities.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 85% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    What are the 3 V's that define Big Data?
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>1. Volume:</strong> The sheer amount of data generated—measured in Terabytes, Petabytes, or Exabytes. Traditional databases cannot handle this scale.</div><div class="key-point"><strong>2. Velocity:</strong> The high speed at which new data is generated and must be processed—real-time streams from sensors, social media, transactions.</div><div class="key-point"><strong>3. Variety:</strong> Different formats and types of data:<ul><li>Structured (databases, spreadsheets)</li><li>Semi-structured (XML, JSON)</li><li>Unstructured (video, images, social media, text)</li></ul></div><div class="answer-text"><strong>Business impact:</strong> Requires new technologies (Hadoop, Spark) beyond traditional RDBMS to store, process, and analyze</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="cloud-computing">
+            <div class="category-header">
+                <h2>☁️ Cloud Computing</h2>
+                <div class="category-count">5 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 80% Likelihood</span>
+                    <span class="points-badge">💯 10-12 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe and compare IaaS, PaaS, and SaaS. Give examples of each.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>IaaS (Infrastructure as a Service):</strong> Virtualized computing resources like servers and storage. <em>Example:</em> AWS EC2. <strong>Use:</strong> Maximum flexibility and control</div><div class="key-point"><strong>PaaS (Platform as a Service):</strong> Development platforms without managing infrastructure. <em>Example:</em> Google App Engine. <strong>Use:</strong> For developers building applications</div><div class="key-point"><strong>SaaS (Software as a Service):</strong> Complete applications over Internet. <em>Example:</em> Office 365. <strong>Use:</strong> For end users needing ready applications</div><div class="answer-text">Trade-off: Increasing convenience but decreasing control from IaaS → PaaS → SaaS</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 70% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What are the main business benefits of cloud computing?
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Key Benefits:</strong><ul><li><strong>Reduced CapEx:</strong> No upfront hardware costs</li><li><strong>Scalability:</strong> Adjust resources on-demand</li><li><strong>Accessibility:</strong> Access from anywhere</li><li><strong>Pay-per-use:</strong> Costs align with actual usage</li><li><strong>Automatic updates:</strong> No maintenance burden</li><li><strong>Resource pooling:</strong> Shared infrastructure efficiency</li></ul></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 92% Likelihood</span>
+                    <span class="points-badge">💯 10-12 pts</span>
+                </div>
+                
+                <div class="question">
+                    List and explain the 5 essential characteristics of cloud computing (NIST definition).
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>1. On-demand self-service:</strong> Users provision resources automatically without human interaction</div><div class="key-point"><strong>2. Broad network access:</strong> Available over the network via standard mechanisms</div><div class="key-point"><strong>3. Resource pooling:</strong> Provider's resources pooled to serve multiple consumers with multi-tenant model</div><div class="key-point"><strong>4. Rapid elasticity:</strong> Capabilities scale quickly to meet demand, appear unlimited to consumer</div><div class="key-point"><strong>5. Measured service:</strong> Resource usage monitored, controlled, and reported (pay-per-use)</div><div class="answer-text"><strong>Key point:</strong> These characteristics separate "real cloud" from simple hosting services</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 75% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What are the four cloud deployment models? Explain each.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>Public Cloud</h4>Shared provider infrastructure available to general public</div><div class="comparison-item"><h4>Private Cloud</h4>Dedicated infrastructure for single organization (on-premises or hosted)</div></div><div class="comparison"><div class="comparison-item"><h4>Hybrid Cloud</h4>Mix of private and public clouds with orchestration between them</div><div class="comparison-item"><h4>Community Cloud</h4>Shared by organizations with similar needs (e.g., compliance requirements)</div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 86% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain virtualization and multi-tenancy in cloud computing. Why do they matter?
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Virtualization:</strong> Makes one physical resource pool appear as many logical machines (VMs, containers)</div><div class="key-point"><strong>Multi-tenancy:</strong> Multiple customers safely share the same physical pool of resources</div><div class="answer-text"><strong>Why they matter:</strong> Enable resource pooling and cost efficiency—foundation of cloud economics. However, customers often don't know exact physical hosting location → governance and control concerns.</div><div class="key-point"><strong>Business implication:</strong> Cost savings through shared infrastructure, but requires trust in provider's isolation mechanisms</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="databases">
+            <div class="category-header">
+                <h2>💾 Databases</h2>
+                <div class="category-count">9 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 95% Likelihood</span>
+                    <span class="points-badge">💯 10-12 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain THREE differences between RDBMS and spreadsheets.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>RDBMS</h4>✓ Multiple related tables with referential integrity<br>✓ Multiple concurrent users<br>✓ Enforced data integrity through constraints<br>✓ SQL for complex queries<br>✓ Optimized for large data volumes</div><div class="comparison-item"><h4>Spreadsheets</h4>✗ Typically single table<br>✗ Designed for single user<br>✗ Flexible but uncontrolled data entry<br>✗ Formulas for calculations<br>✗ Limited scale</div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 90% Likelihood</span>
+                    <span class="points-badge">💯 12-15 pts</span>
+                </div>
+                
+                <div class="question">
+                    Design an ER diagram for a university registration system with Students, Courses, and Professors.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Entities (rectangles):</strong><ul><li>Student (attributes: StudentID, Name, Email)</li><li>Course (attributes: CourseCode, Title, Credits)</li><li>Professor (attributes: EmployeeID, Name, Department)</li></ul></div><div class="key-point"><strong>Relationships (diamonds):</strong><ul><li>"enrolls in" between Student and Course (M:N - many-to-many)</li><li>"teaches" between Professor and Course (1:N - one professor teaches many courses, each course taught by one professor)</li></ul></div><div class="answer-text">Primary keys should be <u>underlined</u>. For M:N relationships, create a junction table.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 75% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain database normalization. Describe 1NF, 2NF, and 3NF.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>Purpose:</strong> Eliminate redundancy and improve data integrity by organizing data into well-structured tables.</div><div class="key-point"><strong>1NF (First Normal Form):</strong> Atomic values only, no repeating groups. Each cell contains single value.</div><div class="key-point"><strong>2NF (Second Normal Form):</strong> Must be in 1NF + eliminate partial dependencies on composite keys. Non-key attributes must depend on <em>entire</em> primary key.</div><div class="key-point"><strong>3NF (Third Normal Form):</strong> Must be in 2NF + eliminate transitive dependencies. Non-key attributes cannot depend on other non-key attributes.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 70% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What are primary keys and foreign keys? How do they work together?
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Primary Key:</strong> Unique identifier for each row in a table. Cannot be NULL. Ensures each record is uniquely identifiable.</div><div class="key-point"><strong>Foreign Key:</strong> An attribute in one table that references the primary key of another table. Creates relationships between tables.</div><div class="answer-text"><strong>Together:</strong> They enforce <span class="technical-term">referential integrity</span>, ensuring relationships remain consistent and preventing orphaned records (foreign keys referencing non-existent primary keys).</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 65% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is SQL? Write a query to select all IDS students.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>SQL (Structured Query Language):</strong> A declarative, fourth-generation language used to query and manipulate relational databases by describing <em>what</em> data is needed, not <em>how</em> to retrieve it.</div><div class="key-point"><strong>Basic Query:</strong><br><code>SELECT * FROM Students WHERE Program = 'IDS';</code><br><br>• <code>SELECT *</code> - all columns<br>• <code>FROM Students</code> - table name<br>• <code>WHERE Program = 'IDS'</code> - filter condition</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 88% Likelihood</span>
+                    <span class="points-badge">💯 10-12 pts</span>
+                </div>
+                
+                <div class="question">
+                    What are the ACID properties for reliable database transactions?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">ACID ensures database transactions are reliable and maintain data integrity:</div><div class="key-point"><strong>1. Atomicity:</strong> Transaction is "all or nothing"—if one part fails, entire transaction is rolled back. No partial updates.</div><div class="key-point"><strong>2. Consistency:</strong> Transaction transforms database from one valid state to another, following all integrity rules and constraints.</div><div class="key-point"><strong>3. Isolation:</strong> Concurrent transactions occur independently without interfering with each other. Changes invisible until committed.</div><div class="key-point"><strong>4. Durability:</strong> Once committed, transaction changes are permanent—survive system failures, power loss, crashes.</div><div class="answer-text"><strong>Exam relevance:</strong> Critical for understanding why RDBMS are used for mission-critical applications</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 82% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Define Referential Integrity and explain why it matters.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><span class="technical-term">Referential Integrity</span> is a database constraint ensuring all Foreign Key values in one table consistently point to existing Primary Key values in another table.</div><div class="key-point"><strong>What it prevents:</strong><ul><li>"Orphan" records (FK pointing to non-existent PK)</li><li>Deleting referenced records</li><li>Broken relationships between tables</li><li>Data inconsistency</li></ul></div><div class="answer-text"><strong>Example:</strong> Cannot delete a Department if Employees still reference it. System prevents this violation.</div><div class="key-point"><strong>Why it matters:</strong> Ensures relationships between tables remain synchronized and valid at all times</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 75% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Contrast Data and Information with examples.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>Data</h4>Raw, unprocessed facts, symbols, or observations with no inherent meaning<br><br><strong>Example:</strong> 42, 15, 88, 23</div><div class="comparison-item"><h4>Information</h4>Data processed, organized, or structured within context to make it meaningful<br><br><strong>Example:</strong> "Sales increased 42% in Q3"</div></div><div class="key-point"><strong>Key distinction:</strong> Data becomes information through processing and contextualization. Information supports decision-making, data alone does not.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 70% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe a 1:n (one-to-many) relationship with a business example.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">A <span class="technical-term">1:n relationship</span> occurs when a single record in the first table (the "one" side) can be associated with multiple records in a second table (the "many" side), but each record in the second table links back to only one record in the first.</div><div class="key-point"><strong>Example: Department ↔ Employees</strong><ul><li>One Department can have many Employees</li><li>Each Employee belongs to only one Department</li><li>Department is the "1" side, Employee is the "n" side</li></ul></div><div class="answer-text"><strong>Implementation:</strong> Foreign Key in Employee table references Primary Key in Department table</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="enterprise-systems">
+            <div class="category-header">
+                <h2>🏢 Enterprise Systems</h2>
+                <div class="category-count">5 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 90% Likelihood</span>
+                    <span class="points-badge">💯 10-12 pts</span>
+                </div>
+                
+                <div class="question">
+                    What does CRM stand for? What is the difference between operational and analytical CRM?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>CRM:</strong> Customer Relationship Management—a system for managing all interactions and relationships with customers throughout their lifecycle.</div><div class="comparison"><div class="comparison-item"><h4>Operational CRM</h4>Automates customer-facing processes:<br>• Sales force automation<br>• Marketing campaigns<br>• Customer service management</div><div class="comparison-item"><h4>Analytical CRM</h4>Analyzes customer data for insights:<br>• Customer behavior analysis<br>• Customer segmentation<br>• Optimize marketing strategies<br>• Retention optimization</div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 80% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is an ERP system? Explain its modules and benefits.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>ERP (Enterprise Resource Planning):</strong> Integrated software platform managing core business processes across entire organization using a shared database.</div><div class="key-point"><strong>Common Modules:</strong> Finance, HR, Manufacturing, Supply Chain Management (SCM), Customer Relationship Management (CRM)</div><div class="key-point"><strong>Benefits:</strong> Real-time data integration, eliminated data silos, standardized processes, improved efficiency and visibility, better decision-making</div><div class="answer-text"><strong>Challenges:</strong> High costs, complexity, significant change management requirements</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 65% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain Supply Chain Management (SCM) and how IT systems support it.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>SCM:</strong> Coordinates the flow of goods, information, and finances from raw material suppliers through manufacturing and distribution to end customers.</div><div class="key-point"><strong>IT Support:</strong><ul><li>Real-time inventory tracking</li><li>Logistics and routing optimization</li><li>Supplier/partner coordination</li><li>Demand forecasting</li><li>Automated procurement</li></ul></div><div class="answer-text"><strong>Results:</strong> Reduced costs, improved efficiency, better collaboration, enhanced responsiveness to market changes</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 70% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is CRM's "single point of contact" concept?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">CRM systems coordinate multiple communication channels (phone, email, web, chat) so that regardless of which channel a customer uses, they are routed to the right person/department with full context of previous interactions.</div><div class="key-point"><strong>Benefit:</strong> The organization doesn't appear fragmented—customer has consistent experience across all touchpoints</div><div class="answer-text"><strong>Example:</strong> Customer starts inquiry via email, follows up by phone—CRM ensures phone rep sees email history</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 65% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Define Service Oriented Architecture (SOA).
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">Service Oriented Architecture is a software design approach where application components provide services to other components via network communication protocols.</div><div class="key-point"><strong>Key characteristics:</strong><ul><li><strong>Modular:</strong> System built from independent services</li><li><strong>Loosely coupled:</strong> Services communicate through standard interfaces</li><li><strong>Language-neutral:</strong> Services can interact regardless of programming language</li><li><strong>Reusable:</strong> Services can be used by multiple applications</li></ul></div><div class="answer-text"><strong>Example:</strong> Payment service used by website, mobile app, and phone system—all communicate through standard API</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="ethics-and-legal">
+            <div class="category-header">
+                <h2>⚖️ Ethics & Legal</h2>
+                <div class="category-count">2 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 70% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Why do ethical issues arise in information systems?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">Technology creates new capabilities and situations faster than laws and social norms can adapt. This creates gray areas where legal guidance is unclear or absent.</div><div class="key-point"><strong>Therefore:</strong> Organizations need guidance on responsible behavior through:<ul><li>Codes of ethics</li><li>Acceptable use policies</li><li>Internal governance structures</li></ul></div><div class="answer-text">Cannot rely only on "what's legal"—must consider "what's right" for stakeholders</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 68% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Distinguish: Code of Ethics vs AUP. Define IP and copyright.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>Code of Ethics</h4>Professional/organizational behavior standards—provides <em>guidance</em> on right conduct</div><div class="comparison-item"><h4>AUP (Acceptable Use Policy)</h4>Rules for acceptable use of organization's technology/services—enforceable <em>policy</em></div></div><div class="key-point"><strong>IP (Intellectual Property):</strong> Property of the mind—law protects outputs of creative/innovative ideas</div><div class="key-point"><strong>Copyright:</strong> Legal protection for authored works (software, books, art, music, etc.) Gives creator exclusive rights to reproduce, distribute, display</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="hardware-and-software">
+            <div class="category-header">
+                <h2>🖥️ Hardware & Software</h2>
+                <div class="category-count">15 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 85% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the Von Neumann architecture? Explain the Von Neumann bottleneck.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Architecture:</strong> Single bus connecting CPU, memory, and I/O devices, with both data and instructions stored in the same memory.</div><div class="key-point"><strong>Bottleneck:</strong> The single shared bus creates a throughput limitation where the CPU must wait for memory access, making the communication channel between CPU and memory the performance bottleneck rather than the processing speed itself.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 80% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the general purpose of an operating system? Describe at least three key functions.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">An operating system serves as the <span class="technical-term">interface layer</span> between hardware and application software, managing system resources and providing a standardized platform.</div><div class="key-point"><strong>Key Functions:</strong><ul><li>Hardware abstraction (hiding complexity)</li><li>Resource management (CPU, memory, I/O)</li><li>Process management (multitasking)</li><li>Security and access control</li></ul></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 65% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain what virtualization is and describe at least two types.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">Virtualization creates virtual versions of computing resources, allowing multiple independent systems to share the same physical hardware.</div><div class="comparison"><div class="comparison-item"><h4>OS-Level Virtualization</h4>Shares one operating system among multiple isolated applications (containers)</div><div class="comparison-item"><h4>Platform Virtualization (VMs)</h4>Uses a hypervisor to run multiple complete operating systems on the same hardware</div></div><div class="key-point">Essential for cloud computing's resource pooling and cost efficiency</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 60% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain the make-or-buy decision for software. What are the advantages and disadvantages?
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>BUY</h4><strong>Pros:</strong> Lower cost, vendor expertise, faster<br><strong>Cons:</strong> Less flexible, dependency</div><div class="comparison-item"><h4>MAKE</h4><strong>Pros:</strong> Customized, competitive advantage<br><strong>Cons:</strong> Higher cost, longer timeline, requires expertise</div></div><div class="key-point">Decision factors: TCO (Total Cost of Ownership), business requirements alignment, strategic importance</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 68% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the function of the System Bus in a computer?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <span class="technical-term">System Bus</span> is a high-speed communication pathway connecting and transferring data between CPU, Memory (RAM), and I/O controllers.</div><div class="key-point"><strong>Three specialized buses:</strong><br><br><strong>1. Data Bus:</strong> Carries actual data being processed<br><strong>2. Address Bus:</strong> Specifies where data should be sent/retrieved in memory<br><strong>3. Control Bus:</strong> Transmits coordination signals (Read/Write, timing, status)</div><div class="answer-text"><strong>Metaphor:</strong> Acts as the "highway" for internal computer components—all communication flows through it</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 65% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe the three components of the IPO Model.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <span class="technical-term">IPO Model</span> represents the fundamental structure of information processing in computing:</div><div class="key-point"><strong>1. Input:</strong> Raw data enters the system via input devices (keyboard, mouse, sensors, network)</div><div class="key-point"><strong>2. Processing:</strong> CPU performs operations, calculations, or transformations on the data using instructions</div><div class="key-point"><strong>3. Output:</strong> Processed information is presented to user via output devices (screen, printer, speakers, network)</div><div class="answer-text"><strong>Example:</strong> User types search query (Input) → Google processes query (Processing) → Results displayed (Output)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 62% Likelihood</span>
+                    <span class="points-badge">💯 4-6 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the task of the ALU in a CPU?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <span class="technical-term">ALU (Arithmetic Logic Unit)</span> is the part of the CPU responsible for performing all computational operations.</div><div class="key-point"><strong>Arithmetic operations:</strong> Addition, subtraction, multiplication, division</div><div class="key-point"><strong>Logical operations:</strong> AND, OR, NOT, XOR, comparisons (greater than, less than, equal to)</div><div class="answer-text"><strong>Metaphor:</strong> The "calculator" of the processor—where actual data processing takes place. Works with Control Unit which directs what operations to perform.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 60% Likelihood</span>
+                    <span class="points-badge">💯 4-6 pts</span>
+                </div>
+                
+                <div class="question">
+                    Define the role of the Control Unit (CU) in a CPU.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <span class="technical-term">Control Unit (CU)</span> acts as the "manager" or "orchestrator" of the CPU.</div><div class="key-point"><strong>Primary functions:</strong><ul><li><strong>Fetch:</strong> Retrieves instructions from memory</li><li><strong>Decode:</strong> Interprets what the instruction means</li><li><strong>Execute:</strong> Directs components to carry out instruction</li><li>Coordinates data flow between ALU, registers, and memory</li></ul></div><div class="answer-text">Works with ALU: CU decides <em>what</em> to do, ALU <em>does</em> the calculation</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 78% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Why is Cache Memory essential for CPU performance?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">Cache Memory is essential because it bridges the speed gap between the fast CPU and slower Main Memory (RAM).</div><div class="key-point"><strong>Problem:</strong> CPU operates at GHz speeds, RAM at much slower speeds → CPU would spend most time waiting (bottleneck)</div><div class="key-point"><strong>Solution:</strong> Cache stores frequently accessed data and instructions <em>closer</em> to CPU:<ul><li>L1 Cache: Fastest, smallest, on CPU chip</li><li>L2 Cache: Slightly slower, larger</li><li>L3 Cache: Slower than L1/L2, but much faster than RAM</li></ul></div><div class="answer-text"><strong>Result:</strong> Significantly reduces CPU idle time, dramatically increases processing speed</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 68% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What characterizes Open Source Software (OSS)?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">Open Source Software is characterized by publicly accessible source code that anyone can inspect, modify, and redistribute.</div><div class="key-point"><strong>Key characteristics:</strong><ul><li>Source code freely available</li><li>Developed through community collaboration</li><li>License ensures freedom to use for any purpose</li><li>Can be modified and redistributed</li><li>No restrictions on commercial use</li></ul></div><div class="comparison"><div class="comparison-item"><h4>Open Source</h4>Community-driven, transparent, free to modify<br>Examples: Linux, Apache, MySQL</div><div class="comparison-item"><h4>Proprietary</h4>Closed source, vendor-controlled, restricted modification<br>Examples: Windows, Oracle DB</div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 65% Likelihood</span>
+                    <span class="points-badge">💯 4-6 pts</span>
+                </div>
+                
+                <div class="question">
+                    Why is RAM considered Volatile Memory?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">RAM (Random Access Memory) is <span class="technical-term">volatile</span> because it requires continuous power supply to maintain stored data.</div><div class="key-point"><strong>Critical behavior:</strong> When power is turned off or interrupted, all information stored in RAM is <em>immediately lost</em></div><div class="answer-text"><strong>Why it matters:</strong> This is why you must save work to non-volatile storage (SSD, HDD) to keep it permanently. Unsaved work in RAM disappears during power failure, crash, or shutdown.</div><div class="answer-text"><strong>Contrast with non-volatile:</strong> SSD/HDD retain data without power—used for permanent storage</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 62% Likelihood</span>
+                    <span class="points-badge">💯 4-6 pts</span>
+                </div>
+                
+                <div class="question">
+                    Define Non-Volatile Memory and give examples.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">Non-Volatile Memory is storage that retains information even after power is turned off. Does not require continuous electrical current to hold data.</div><div class="key-point"><strong>Examples:</strong><ul><li><strong>SSD (Solid State Drive):</strong> Fast flash-based storage</li><li><strong>HDD (Hard Disk Drive):</strong> Magnetic disk storage</li><li><strong>Flash Drive (USB):</strong> Portable flash memory</li><li><strong>ROM (Read-Only Memory):</strong> Firmware storage</li></ul></div><div class="answer-text"><strong>Use case:</strong> Long-term data storage—operating system files, documents, programs, databases</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 72% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain Hardware Abstraction in an Operating System.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">Hardware Abstraction is an OS function that hides complex technical details of physical hardware from applications and users.</div><div class="key-point"><strong>How it works:</strong> OS provides standardized interface (via Device Drivers) allowing software to interact with different hardware without knowing specific brand or internal mechanics</div><div class="answer-text"><strong>Example:</strong> Word processor uses generic "print" command. OS translates this to specific commands for HP, Canon, or Epson printer—application doesn't need printer-specific code.</div><div class="key-point"><strong>Benefits:</strong><ul><li>Software portability across hardware</li><li>Simplified application development</li><li>Easy hardware upgrades without software changes</li></ul></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 58% Likelihood</span>
+                    <span class="points-badge">💯 4-6 pts</span>
+                </div>
+                
+                <div class="question">
+                    Define the Binary System and why computers use it.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <span class="technical-term">Binary System</span> is a base-2 numeral system representing values using only two digits: 0 and 1.</div><div class="key-point"><strong>Why computers use binary:</strong> Corresponds to two physical states of digital circuits:<ul><li><strong>0:</strong> Off, low voltage, no current</li><li><strong>1:</strong> On, high voltage, current flowing</li></ul></div><div class="answer-text"><strong>Fundamental principle:</strong> All computer data—numbers, text, images, video, programs—is ultimately stored and processed as sequences of 0s and 1s</div><div class="answer-text"><strong>Example:</strong> Letter 'A' = 01000001 in binary (ASCII code 65)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 65% Likelihood</span>
+                    <span class="points-badge">💯 4-6 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the purpose of a Device Driver?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">A <span class="technical-term">Device Driver</span> is specialized software that acts as a translator between the Operating System and specific hardware devices.</div><div class="key-point"><strong>Function:</strong> Converts general OS commands into device-specific instructions that hardware can understand</div><div class="answer-text"><strong>Example:</strong> When you click "print," OS sends generic print command. Driver translates this into specific commands your HP LaserJet printer understands (paper tray, ink levels, resolution).</div><div class="key-point"><strong>Why needed:</strong> Each hardware manufacturer uses different internal protocols—drivers provide standardized interface for OS</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="networking">
+            <div class="category-header">
+                <h2>🌐 Networking</h2>
+                <div class="category-count">7 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 90% Likelihood</span>
+                    <span class="points-badge">💯 10-12 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe the OSI reference model. Explain the function of each layer.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>7 Layers (top to bottom):</strong><ol><li><strong>Application:</strong> User interface and services</li><li><strong>Presentation:</strong> Data formatting, encryption</li><li><strong>Session:</strong> Connection management, synchronization</li><li><strong>Transport:</strong> End-to-end reliability (TCP)</li><li><strong>Network:</strong> Routing between networks (IP)</li><li><strong>Data Link:</strong> Node-to-node transfer</li><li><strong>Physical:</strong> Bit transmission</li></ol></div><div class="key-point"><strong>Why Layered?</strong> Provides abstraction, modularity, and allows protocols to be swapped at each level independently</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 95% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe the client-server architecture of the World Wide Web (WWW).
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Model:</strong> Client (browser) sends HTTP request → Server processes → Server returns HTTP response</div><div class="answer-text">This is a <span class="technical-term">pull strategy</span> where clients initiate all communication. The model is <strong>distributed</strong> and can be chained—one server can act as a client to another server.</div><div class="key-point"><strong>Key Point:</strong> Client and server are <em>roles</em>, not specific hardware. Any device can act as either depending on the application.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 75% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain what TCP/IP is and describe how data is transmitted across the Internet.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>TCP (Transport Layer)</h4>Ensures reliable, connection-oriented data delivery with error checking</div><div class="comparison-item"><h4>IP (Network Layer)</h4>Handles routing and addressing packets across networks</div></div><div class="key-point"><strong>Packet Switching:</strong> Messages are broken into small packets that travel independently through multiple network hops (routers), may take different paths, then are reassembled at destination</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 55% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What are the main differences between LAN and WAN? Give examples.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>LAN (Local Area Network)</h4>Limited geographic area (building/campus), high speed, single organization ownership<br><strong>Example:</strong> University or office network</div><div class="comparison-item"><h4>WAN (Wide Area Network)</h4>Large geographic area (cities/countries), lower speed, multiple organizations<br><strong>Example:</strong> The Internet</div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 67% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain the major Internet services: HTTP, SMTP, and FTP.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>HTTP</h4><strong>HyperText Transfer Protocol</strong><br>Web communication (browser ↔ server)<br>Application layer protocol for WWW</div><div class="comparison-item"><h4>SMTP</h4><strong>Simple Mail Transfer Protocol</strong><br>Email sending between mail servers<br>Push protocol for email delivery</div></div><div class="key-point"><strong>FTP (File Transfer Protocol):</strong> Classic file transfer between systems. Largely replaced by SFTP/HTTPS but still foundational concept</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 70% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the Internet of Things (IoT)?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <span class="technical-term">Internet of Things (IoT)</span> refers to a network of physical objects ("things") embedded with sensors, software, and connectivity that collect and exchange data over the Internet.</div><div class="key-point"><strong>Examples:</strong><ul><li>Smart home devices (thermostats, security cameras)</li><li>Wearables (fitness trackers, smartwatches)</li><li>Industrial sensors (manufacturing, logistics)</li><li>Connected vehicles</li><li>Smart city infrastructure</li></ul></div><div class="answer-text"><strong>Business impact:</strong> Enables remote monitoring, control, automation, and data-driven insights from physical world</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 72% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe DNS (Domain Name System) functionality.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">DNS acts as the "phonebook" of the Internet, translating human-readable domain names into numeric IP addresses.</div><div class="key-point"><strong>How it works:</strong><br>1. You type <code>jade-hs.de</code> in browser<br>2. DNS server translates to IP address (e.g., <code>142.250.185.78</code>)<br>3. Browser connects to that IP address<br>4. Website loads</div><div class="answer-text"><strong>Why necessary:</strong> Computers communicate using IP addresses (numbers), but humans remember names better. DNS bridges this gap.</div><div class="answer-text"><strong>Without DNS:</strong> You'd need to memorize IP addresses like 172.217.16.142 instead of google.com</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="process-management">
+            <div class="category-header">
+                <h2>📋 Process Management</h2>
+                <div class="category-count">2 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 77% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Why is process management tied to competitive advantage?
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Logic:</strong> Competitive advantage comes from how well you perform activities. Processes are structured sequences of activities.</div><div class="answer-text"><strong>Therefore:</strong> Process management directly improves:<ul><li>Efficiency (lower costs)</li><li>Quality (fewer defects)</li><li>Consistency (reliable outcomes)</li><li>Adaptability (enables change)</li></ul></div><div class="answer-text">Better process performance → better competitive position in cost, differentiation, or both</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 77% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is a process landscape? What are the three process types?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">A <span class="technical-term">process landscape</span> is a high-level map showing all major processes in an organization, grouped by type.</div><div class="comparison"><div class="comparison-item"><h4>Core Processes</h4>End-to-end value creation directly serving customers</div><div class="comparison-item"><h4>Support Processes</h4>Enable core processes (HR, IT, finance)</div></div><div class="key-point"><strong>Management Processes:</strong> Steer and control the organization (not direct customer value but necessary—planning, governance, compliance)</div><div class="answer-text"><strong>Use:</strong> Supports process identification—mapping and grouping processes so organization is manageable and readable</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="project-management">
+            <div class="category-header">
+                <h2>🎯 Project Management</h2>
+                <div class="category-count">5 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 90% Likelihood</span>
+                    <span class="points-badge">💯 10-12 pts</span>
+                </div>
+                
+                <div class="question">
+                    Give TWO system migration strategies. Choose one and justify with advantages/disadvantages.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>1. Big Bang:</strong> Immediate complete switch. Fast but high risk of total failure.</div><div class="key-point"><strong>2. Parallel:</strong> Run old and new systems simultaneously. Safest but most expensive (duplicated effort).</div><div class="key-point"><strong>3. Phased:</strong> Gradual migration by modules/departments. Moderate risk and cost, longer timeline.</div><div class="key-point"><strong>4. Pilot:</strong> Test with small group first. Low risk but longer overall timeline.</div><div class="answer-text"><strong>Recommendation:</strong> <em>Parallel</em> for mission-critical systems where failure is unacceptable despite higher cost. <em>Phased</em> offers balanced approach for most situations.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 60% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe the main phases of the Software Development Lifecycle (SDLC).
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>SDLC Phases:</strong><ol><li><strong>Requirements:</strong> Gather and document needs</li><li><strong>Design:</strong> Architect system structure</li><li><strong>Implementation:</strong> Write code</li><li><strong>Testing:</strong> Verify functionality</li><li><strong>Deployment:</strong> Release to users</li><li><strong>Maintenance:</strong> Ongoing support and updates</li></ol></div><div class="answer-text"><strong>Approaches:</strong> Waterfall (sequential) vs Agile (iterative)</div><div class="key-point"><strong>Why Structured?</strong> Ensures quality, controls costs/schedules, manages risks, facilitates communication, provides documentation</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 55% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the triple constraint in project management? How do IT projects differ?
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Triple Constraint:</strong> Three interdependent dimensions:<br>1. <strong>Scope</strong> (what will be delivered)<br>2. <strong>Time</strong> (project schedule)<br>3. <strong>Cost</strong> (budget)<br><br>Changes to one typically affect the others. Sometimes expanded to include <strong>Quality</strong> as fourth dimension.</div><div class="answer-text"><strong>IT Project Differences:</strong> Rapid technology change requiring flexibility, high complexity with many dependencies, intangible deliverables harder to measure, greater uncertainty in requirements, reliance on specialized knowledge</div><div class="key-point">Makes <strong>Agile methodologies</strong> often more suitable than traditional waterfall for managing changing requirements</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 75% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain Scrum: roles, sprint logic, and why it helps.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Key Roles:</strong><ul><li><strong>Product Owner:</strong> Prioritizes backlog for maximum value</li><li><strong>Scrum Master:</strong> Facilitates process, removes impediments</li><li><strong>Development Team:</strong> Self-organizing, cross-functional</li></ul></div><div class="key-point"><strong>Sprint Logic:</strong> Short iteration (typically 2-4 weeks) producing working increment. At end: review, retrospective, adapt.</div><div class="answer-text"><strong>Why it helps:</strong> Enables fast learning and delivery under uncertainty. Frequent inspect-and-adapt cycles reduce risk and improve responsiveness to change.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 76% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain the project "magic rectangle" and its trade-offs.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <span class="technical-term">magic rectangle</span> (or triangle/diamond) shows four interdependent project constraints:</div><div class="key-point"><strong>Four corners:</strong> Time • Cost • Quality • Scope</div><div class="key-point"><strong>Trade-off rule:</strong> Change one dimension → creates pressure on the others<br><br><strong>Examples:</strong><ul><li>Shorter deadline → higher cost and/or reduced scope and/or lower quality</li><li>Increased scope → longer time and/or higher cost</li><li>Fixed cost + time → scope and/or quality must flex</li></ul></div><div class="answer-text">Project managers must constantly balance these constraints based on stakeholder priorities</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="security">
+            <div class="category-header">
+                <h2>🔒 Security</h2>
+                <div class="category-count">5 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 75% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe FOUR types of information security threats organizations face.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>1. Malware:</strong> Viruses, ransomware that encrypts data for ransom, trojans<br><strong>Impact:</strong> Data loss, system disruption, financial extortion</div><div class="key-point"><strong>2. Social Engineering:</strong> Phishing emails tricking users into revealing credentials<br><strong>Impact:</strong> Unauthorized access, identity theft</div><div class="key-point"><strong>3. Unauthorized Access:</strong> Hackers exploiting vulnerabilities, brute force attacks<br><strong>Impact:</strong> Data breaches, system compromise</div><div class="key-point"><strong>4. DDoS Attacks:</strong> Overwhelming systems with traffic<br><strong>Impact:</strong> Service outages, business disruption</div><div class="answer-text">All potentially cause financial losses, operational disruption, regulatory penalties, and reputation damage</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 70% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What security measures can organizations implement? Include technical and organizational measures.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>Technical Measures</h4>• Firewalls (filter network traffic)<br>• Encryption (protect data confidentiality)<br>• Multi-factor authentication<br>• Antivirus software<br>• Regular backups<br>• Security patches/updates</div><div class="comparison-item"><h4>Organizational Measures</h4>• Security policies and procedures<br>• Employee security training<br>• Access control (least privilege)<br>• Incident response plans<br>• Regular security audits<br>• Background checks</div></div><div class="key-point">Implement <span class="technical-term">defense-in-depth</span>: multiple overlapping layers of protection</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 90% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain the CIA triad and why it's a trade-off.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <span class="technical-term">CIA triad</span> represents three fundamental security goals:</div><div class="comparison"><div class="comparison-item"><h4>Confidentiality</h4>Only authorized access to information</div><div class="comparison-item"><h4>Integrity</h4>No unauthorized alteration of data</div><div class="comparison-item"><h4>Availability</h4>Resources accessible when needed</div></div><div class="key-point"><strong>Why it's a trade-off:</strong> Security is a <em>business trade-off</em>—maximizing confidentiality (locking everything down) can break availability and usability. Organizations must balance these three goals based on business needs.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 78% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the difference between Security and Controls?
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>Security</h4>Protects against unauthorized access, theft, and damage—focuses on <em>outside threat lens</em></div><div class="comparison-item"><h4>Controls</h4>Policies and procedures ensuring assets are safeguarded and records are reliable—focuses on <em>inside correctness lens</em></div></div><div class="answer-text">Security addresses external threats while controls address internal governance and correctness of operations.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 82% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Describe the NIST Cybersecurity Framework: Identify–Protect–Detect–Respond–Recover.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">The <strong>NIST CSF</strong> is a lifecycle approach to cybersecurity, not just protection:</div><div class="key-point"><strong>1. Identify:</strong> Know your assets, environment, and risks</div><div class="key-point"><strong>2. Protect:</strong> Implement safeguards (access control, training, protective technology)</div><div class="key-point"><strong>3. Detect:</strong> Spot security incidents quickly</div><div class="key-point"><strong>4. Respond:</strong> Contain/mitigate threats, communicate, improve response</div><div class="key-point"><strong>5. Recover:</strong> Restore services, learn from incidents, improve resilience</div><div class="answer-text"><strong>Exam tip:</strong> Explain it as a continuous <em>lifecycle</em>, not just "protection only"</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="strategy">
+            <div class="category-header">
+                <h2>💼 Strategy</h2>
+                <div class="category-count">10 cards</div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 80% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    How can IT provide competitive advantage? Use Porter's framework.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Three Strategies:</strong><ul><li><strong>Cost Leadership:</strong> IT enables process automation and efficiency gains</li><li><strong>Differentiation:</strong> IT supports unique products or superior customer service</li><li><strong>Innovation:</strong> IT enables new business models and market opportunities</li></ul></div><div class="answer-text"><strong>Porter's Value Chain:</strong> IT enhances both primary activities (operations, marketing, service) and support activities (HR, procurement)</div><div class="key-point"><strong>Important:</strong> Sustainable advantage requires <em>strategic</em> application. Commodity IT provides operational necessity, not competitive differentiation</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 80% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain the digital divide and how commoditization of ICT helps bridge it.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>Digital Divide:</strong> The gap between those who have access to modern information and communication technologies and those who do not, often split by socioeconomic status, geography, or education.</div><div class="key-point"><strong>How Commoditization Helps:</strong> Standardized, mass-produced technology becomes cheaper and more widely available—smartphones, Internet access, and computing devices that were once luxury items become affordable for broader populations</div><div class="answer-text"><strong>Remaining Challenges:</strong> Connectivity infrastructure, digital literacy, evolving definition of necessary technology access</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 82% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Porter's Value Chain: Explain primary vs support activities.
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>Primary Activities</h4>Directly create value:<br>• Inbound logistics<br>• Operations<br>• Outbound logistics<br>• Marketing & sales<br>• Service</div><div class="comparison-item"><h4>Support Activities</h4>Enable primary activities:<br>• Infrastructure (finance, planning)<br>• HR management<br>• Technology development<br>• Procurement</div></div><div class="key-point"><strong>Strategic use:</strong> Analyze where cost advantage or differentiation is created in your value chain</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 79% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    List Porter's Five Forces and explain what "strong forces" means.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Five Forces:</strong><ol><li>Threat of substitutes</li><li>Threat of new entrants (barriers to entry)</li><li>Bargaining power of suppliers</li><li>Bargaining power of customers</li><li>Rivalry among existing competitors</li></ol></div><div class="answer-text"><strong>Interpretation:</strong> Stronger forces → more competitive pressure → harder to sustain high profitability. Firms must position themselves to minimize pressure from unfavorable forces.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 86% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain Porter's generic strategies: cost advantage vs differentiation. How does IT link?
+                </div>
+                
+                <div class="answer">
+                    <div class="comparison"><div class="comparison-item"><h4>Cost Advantage</h4>Perform comparable activities cheaper/more efficiently<br>IT role: Automation, process optimization, economies of scale</div><div class="comparison-item"><h4>Differentiation</h4>Create unique value customers care about<br>IT role: Enhanced experience, superior service, platform effects</div></div><div class="key-point"><strong>Critical IT link:</strong> IT helps when it improves activities and their fit with strategy—not because the technology exists. Advantage comes from <em>how</em> you use IT, not from having it.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 72% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    What is the core message of "Strategy and the Internet"?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text">As Internet technology becomes widespread and accessible to all competitors, the strategic question shifts from <em>whether</em> to adopt it to <em>how</em> you deploy it effectively.</div><div class="key-point"><strong>Core principle:</strong> Competitive advantage comes from strategic fit and execution, not from simple technology adoption. Internet is enabler, not strategy itself.</div><div class="answer-text">Companies must integrate Internet capabilities into their unique activity systems rather than treating it as standalone strategy.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 76% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain the productivity paradox. What are the main causes?
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>What it is:</strong> Early research found that IT investment didn't clearly show up as measurable productivity gains—massive spending without corresponding output increases.</div><div class="key-point"><strong>Main causes:</strong><ul><li><strong>Measurement issues:</strong> Hard to quantify knowledge work benefits</li><li><strong>Time lags:</strong> Returns take years to materialize</li><li><strong>Redistribution:</strong> Benefits captured by customers (lower prices) not measured in producer productivity</li><li><strong>Mismanagement:</strong> IT deployed without process changes or proper training</li></ul></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 88% Likelihood</span>
+                    <span class="points-badge">💯 10-12 pts</span>
+                </div>
+                
+                <div class="question">
+                    Summarize "IT Doesn't Matter" and the course counterpoint.
+                </div>
+                
+                <div class="answer">
+                    <div class="key-point"><strong>Claim (Nicholas Carr):</strong> As IT becomes ubiquitous and easily copyable, it becomes a commodity—like electricity. Cannot provide competitive advantage by itself anymore.</div><div class="key-point"><strong>Counterpoint:</strong> Competitive advantage depends on:<ul><li>Strategic <em>alignment</em> with business goals</li><li>Information management <em>capability</em></li><li>Excellent <em>execution</em> and process integration</li><li>IT enabling unique activity system design</li></ul></div><div class="answer-text">IT infrastructure may be commodity, but how you use it strategically is not.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-high difficulty-badge">HIGH</span>
+                    <span class="likelihood-badge">📊 84% Likelihood</span>
+                    <span class="points-badge">💯 8-10 pts</span>
+                </div>
+                
+                <div class="question">
+                    Define the digital divide. Explain the three stages.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>Definition:</strong> Separation between people who have access to the Internet/global network and those who don't—creates inequality in opportunities, education, and economic participation.</div><div class="comparison"><div class="comparison-item"><h4>Stage 1: Economic</h4>Can afford devices and Internet access</div><div class="comparison-item"><h4>Stage 2: Usability</h4>Ability to use technology effectively (digital literacy)</div></div><div class="key-point"><strong>Stage 3: Empowerment</strong><br>Using technology to improve life outcomes—advanced usage for education, employment, civic participation</div><div class="answer-text">Bridging the divide requires addressing all three stages, not just providing access</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">
+                    <span class="difficulty-medium difficulty-badge">MEDIUM</span>
+                    <span class="likelihood-badge">📊 73% Likelihood</span>
+                    <span class="points-badge">💯 6-8 pts</span>
+                </div>
+                
+                <div class="question">
+                    Explain globalization and the "1.0/2.0/3.0" eras framing.
+                </div>
+                
+                <div class="answer">
+                    <div class="answer-text"><strong>Globalization:</strong> Integration of economies and cultures through flows of goods, services, information, and people—accelerated dramatically by information technology.</div><div class="key-point"><strong>Three Eras:</strong><ul><li><strong>Globalization 1.0:</strong> Countries opening trade (1492-1800s)</li><li><strong>Globalization 2.0:</strong> Multinational corporations going global (1800s-2000)</li><li><strong>Globalization 3.0:</strong> Individuals and small groups competing globally via digital platforms (2000-present)</li></ul></div><div class="answer-text">Each era driven by different agents and enabled by different technologies</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#" class="back-to-top">↑</a>
+    
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
